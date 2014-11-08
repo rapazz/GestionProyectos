@@ -62,9 +62,9 @@ angular.module('app.controllers', [])
 
 	.controller('PageViewController', ['$scope', '$route', '$animate', function($scope, $route, $animate) {
 		// controler of the dynamically loaded views, for DEMO purposes only.
-		/*$scope.$on('$viewContentLoaded', function() {
+		$scope.$on('$viewContentLoaded', function() {
 			
-		});*/
+		});
 	}])
 
 	.controller('SmartAppController', ['$scope', function($scope) {

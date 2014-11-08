@@ -1,19 +1,27 @@
-/*
- * It is advised not to edit the smartadmin_production.css
- * as this will override any changes you make in the 
- * later versions of this theme. 
- * 
- * We advise that you use use this CSS to override 
- * SmartAdmin styles. 
- * 
- * Rename the stylesheet to whatever your liking so it will stay
- * unique to you with each update of SmartAdmin.
- */
 
-/*
- * INDEX
- * 
- * - HTML
- * - BODY
- * - CUSTOM STYLES
- */
+.items{
+    width: 300px;
+    margin: auto;
+    text-align: left;
+    margin-top: 10px;
+    background: #F2F2F2;
+    padding: 3px;
+    z-index: 4;
+    position:absolute;
+    float:right;
+    box-shadow: 0px 0px 5px #CCC;
+}
+
+.title{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.subtitle{
+    font-size: 10px;
+    color: #444;
+}
+.active{
+    background-color: rgba(209, 209, 209, 0.96);
+    color:#f2f2f2;
+}

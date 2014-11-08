@@ -3,13 +3,19 @@ var smartApp = angular.module('smartApp', [
   	//'ngAnimate', // this is buggy, jarviswidget will not work with ngAnimate :(
   	'ui.bootstrap',
   	'plunker',
+  	 'ngCookies',
   	'app.controllers',
   	'app.demoControllers',
   	'app.main',
   	'app.navigation',
   	'app.localize',
   	'app.activity',
-  	'app.smartui'
+  	'app.smartui',
+  	'kcc.controllers',
+  	'kcc.directivas',
+  	'services.config',
+  	'elasticsearch',
+  	'kcc.components'
 ]);
 
 smartApp.config(['$routeProvider', '$provide', function($routeProvider, $provide) {
@@ -26,15 +32,17 @@ smartApp.config(['$routeProvider', '$provide', function($routeProvider, $provide
 		// http://stackoverflow.com/a/17588833
 		.when('/:page', { // we can enable ngAnimate and implement the fix here, but it's a bit laggy
 			templateUrl: function($routeParams) {
+			
 				return 'views/'+ $routeParams.page +'.html';
 			},
 			controller: 'PageViewController'
 		})
 		.when('/:page/:child*', {
 			templateUrl: function($routeParams) {
+					
 				return 'views/'+ $routeParams.page + '/' + $routeParams.child + '.html';
-			},
-			controller: 'PageViewController'
+			}
+		
 		})
 		.otherwise({
 			redirectTo: '/dashboard'
@@ -57,5 +65,5 @@ smartApp.config(['$routeProvider', '$provide', function($routeProvider, $provide
 }]);
 
 smartApp.run(['$rootScope', 'settings', function($rootScope, settings) {
-	settings.currentLang = settings.languages[0]; // en
+	settings.currentLang = settings.languages[1]; // en
 }])

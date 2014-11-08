@@ -22,8 +22,8 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css">
 
 		<!-- We recommend you use "your_style.css" to override SmartAdmin
-		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
-		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update. -->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css">
 
 		<!-- Goes with demo.js, you can delete this css when designing your own WebApp -->
 		<link rel="stylesheet" type="text/css" media="screen" href="css/demo.min.css" >
@@ -65,9 +65,19 @@
 		<aside id="left-panel"><span data-ng-include="'includes/left-panel.html'"></span></aside>
 		<!-- END NAVIGATION -->
 
-	
-		<!-- END MAIN PANEL -->
+		<!-- MAIN PANEL -->
+		<div id="main" role="main">
 
+			<!-- RIBBON -->
+			<div id="ribbon" data-ng-include="'includes/ribbon.html'" data-ribbon=""></div>
+			<!-- END RIBBON -->
+
+			<!-- MAIN CONTENT -->
+			<div id="content" data-ng-view="" class="view-animate"></div>
+			<!-- END MAIN CONTENT -->
+
+		</div>
+		<!-- END MAIN PANEL -->
 		<!-- PAGE FOOTER -->
 		<div class="page-footer"><span data-ng-include="'includes/footer.html'"></span></div>
 		<!-- END FOOTER -->
@@ -146,10 +156,15 @@
 		<script src="js/libs/angular/angular.js"></script>
 	  	<script src="js/libs/angular/angular-route.js"></script>
 	  	<script src="js/libs/angular/angular-animate.js"></script>
+	  	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 	  	<script src="js/libs/angular/ui-bootstrap-custom-tpls-0.11.0.js"></script>
 
 		<!-- ANGULAR: Handled via "ribbon" directive
 		<script src="js/demo.js"></script>-->
+		
+		
+		<!-- ElasticSearch --> 
+		 <script src="bower_components/elasticsearch/elasticsearch.angular.js"></script>
 
 		<!-- MAIN APP JS FILE -->
 		<script src="js/app.js"></script>
@@ -158,7 +173,13 @@
 	  	<script src="js/ng/ng.app.js"></script>
 	  	<script src="js/ng/ng.controllers.js"></script>
 	  	<script src="js/ng/ng.directives.js"></script>
-
+        <script src="js/controles/usuarios.js"></script>
+        <script src="js/controles/login.controller.js"></script>
+         <script src="js/directivas/config.js"></script>
+         <script src="js/directivas/typehead.js"></script>
+         <script src="js/directivas/auth.service.js"></script>
+         <script src="js/directivas/user.service.js"></script>
+         <script src="js/controles/navbarController.js"></script>
 	  	<!-- PLUNKER -->
 	  	<script src="js/ng/plunker.js"></script>
 
