@@ -2,15 +2,15 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 exports.setup = function (User, config) {
-   
+ 
   passport.use(new GoogleStrategy({
      
       clientID:'831491199430-30k4m13n5er4g6q9mfcklb8k31iaabda.apps.googleusercontent.com', //config.google.clientID,
-      clientSecret: 'WnDDwfu4ezlMNhfRuhEqa_X2',//config.google.clientSecret,
+      clientSecret: 'ZkhPH_nizs-yNhYw-xWGJAVd',//config.google.clientSecret,
       callbackURL: config.google.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
-      
+     
       User.findOne({
         'google.id': profile.id
       }, function(err, user) {

@@ -5,7 +5,7 @@ var _ = require('lodash');
 
 function requiredProcessEnv(name) {
   if(!process.env[name]) {
-    throw new Error('You must set the ' + name + ' environment variable');
+    throw new Error('Debe Especificar el Nombre ' + name + ' de la Variable de Entorno');
   }
   return process.env[name];
 }
@@ -21,8 +21,6 @@ var all = {
   // Server port
   port: process.env.PORT || 9000,
 
-  // Should we populate the DB with sample data?
-  seedDB: false,
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
@@ -31,15 +29,6 @@ var all = {
 
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
-
-  // MongoDB connection options
-  mongo: {
-    options: {
-      db: {
-        safe: true
-      }
-    }
-  },
 
   google: {
     clientID:     process.env.GOOGLE_ID || 'id',

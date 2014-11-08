@@ -9,12 +9,12 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
-  app.use('/api/incidentes', require('./api/incidente'));
-  app.use('/api/menus', require('./api/menu'));
-  app.use('/api/listas', require('./api/listas'));
-  app.use('/api/proyectos', require('./api/proyecto'));
-  app.use('/api/things', require('./api/thing'));
+  app.use('/api/menus', require('./api/route/menu'));
+  app.use('/api/rol', require('./api/route/rol'));
+  app.use('/api/usuario', require('./api/route/usuario'));
+  
   app.use('/api/users', require('./api/user'));
+  
 
   app.use('/auth', require('./auth'));
   

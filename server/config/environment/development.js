@@ -4,11 +4,12 @@
 // ==================================
 module.exports = {
   
+  mysql: {
+    dialect:'mysql',
+    port: 3306,
+    user: 'rapazz',
+    password:'',
+    database:'c9'
   
-  // MongoDB connection options
-  mongo: {
-    uri: 'mongodb://cloud9:cloud9@kahana.mongohq.com:10086/dbGestion'
-  },
-
-  seedDB: true
+}
 };
